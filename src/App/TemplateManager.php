@@ -39,12 +39,12 @@ class TemplateManager {
     }
 
     public function generate_pdf($data) {
-        $url = "http://localhost:8888/contract/contract.php?".http_build_query($data);
+        $url = getenv("BASE_URL")."/contract.php?".http_build_query($data);
 
         return  $this->snappy->getOutput( $url );
     }
     public function generate_html($data) {
-        $url = "http://localhost:8888/contract/contract.php?".http_build_query($data);
+        $url = getenv("BASE_URL")."/contract.php?".http_build_query($data);
 
         return  file_get_contents($url);
     }

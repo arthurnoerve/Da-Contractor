@@ -11,7 +11,8 @@
     ],
     "require": {
         "knplabs/knp-snappy": "^1.0",
-        "erusev/parsedown": "^1.6"
+        "erusev/parsedown": "^1.6",
+        "vlucas/phpdotenv": "^2.4"
     },
     "autoload": {
         "psr-4": {

@@ -7,5 +7,6 @@ composer.phar
 
 public/signature.png
 public/bower_components
+
 templates/*
 !templates/example.md

@@ -3,17 +3,11 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use \App\TemplateManager;
 
+
+$dotenv = new Dotenv\Dotenv(__DIR__."/../");
+$dotenv->load();
+
 $man = new TemplateManager();
-
-if (false ) {
-    $man = new TemplateManager();
-
-
-    header('Content-Type: application/pdf');
-    header('Content-Disposition: inline; filename="' . $params['company'] . '.pdf"');
-
-    echo $man->generate_pdf($params);
-}
 
 
 function __($thing) {

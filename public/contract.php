@@ -4,6 +4,8 @@ setlocale(LC_ALL,'no_NO');
 
 use \App\TemplateManager;
 
+$dotenv = new Dotenv\Dotenv(__DIR__."/../");
+$dotenv->load();
 
 $man = new TemplateManager();
 
@@ -125,10 +127,11 @@ $parsedown = new Parsedown();
                 float: left;
                 width: 20%;
                 height: 100%;
+                border-bottom: 1px solid grey;
             }
             .signatures img {
                 height: 100%;
-                border-bottom: 1px solid grey;
+
 
             }
             .signatures .others {
@@ -152,7 +155,10 @@ $parsedown = new Parsedown();
         <div class="signatures">
 
             <div class="me">
-                <img src="signature.png" alt="">
+                <?php if (file_exists('signature.png')): ?>
+                    <img src="signature.png" alt="">
+                <?php endif; ?>
+
             </div>
             <div class="others">
             </div>
